@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/x-icon" href="asset/mondo_1/testa_pinocchio.png">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <script src="phaser.min.js"> </script>
+    <script src="bootState.js"></script>
+    <script src="menu.js"> </script>
+    <script src="storia.js"> </script>
+        <script src="storiamanuale.js"></script>
+    <script src="autori.js"> </script>
+    <script src="level1.js"></script>
+    <script src="intermezzo.js"></script>
+    <script src="level2.js"></script>
+    <script src="finale.js"></script>
+    <script src="slideshowState.js"></script>
+
+
+    <style>
+    		body {margin:0; background-color: black;}
+canvas {margin:0;}
+
+    		@font-face {
+    			font-family: 'Providence Sans';
+    			src: url('asset/font/Providence_Sans_Regular.ttf');
+    			font-style: normal;
+    			font-weight: 400;
+    		}
+        </style>
+
+  <title>PINOCCHIO</title>
+
+</head>
+<body>
+
+
+<div style="font-family:'Providence Sans'; opacity:100; position:absolute;">.</div>
+<script>
+
+  style1 = {font:'40px Providence Sans', fill:'#fff', align:'right'};
+
+
+
+ var game = new Phaser.Game(1024, 768, Phaser.AUTO, 'game');
+
+  var livello1Preso=false;
+  var fineGioco = false;
+  var inizio = true;
+  var storiamenu = false;
+  var autorimenu = false;
+  var intermedio = false;
+  var finale1= false;
+  var slideshow = false;
+  var totCoin =0;
+
+
+  game.state.add('bootState', bootState);
+  game.state.add('loadingState', loadingState);
+  game.state.add('menustate', menustate);
+  game.state.add('storiastate', storiastate);
+    game.state.add('storiaManuale', storiaManuale);
+  game.state.add('autoristate', autoristate);
+  game.state.add('slideshowState', slideshowState);
+	game.state.add('level1', level1);
+  game.state.add('intermezzo', intermezzo);
+  game.state.add('level2', level2);
+  game.state.add('finale', finale);
+
+
+  game.state.start('bootState');
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
