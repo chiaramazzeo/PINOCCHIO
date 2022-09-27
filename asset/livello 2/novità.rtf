@@ -1,0 +1,57 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2636
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 overlapGattona.body.setSize (150, 81, 130, 0);\
+\
+overlapNonsaltare= game.add.sprite(2085,5343, 'overlapNonsaltare');\
+game.physics.arcade.enable(overlapNonsaltare);\
+overlapNonsaltare.body.setSize (170, 81, 140, 0);\
+\
+UPDATE\
+\
+SOTTO game.physics.arcade.overlap(player, overlapGattona, pinocchioGattona);\
+\
+game.physics.arcade.overlap(player, overlapGattona, pinocchioNonsalta);\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 if (gattona, nonsaltare) diventa if (gattona && nonsaltare)\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 Da qui in poi\
+\
+    if (gattona && nonsaltare) \{\
+      player.frame = 78;\
+      player.body.setSize(96, 80, 12, 58);\
+      if (jumpButton.isDown && (player.body.onFloor() || player.body.touching.down)) \{\
+        player.body.velocity.y = 0;\
+      \}\
+\
+    \}\
+\
+    function pinocchioGattona () \{\
+      gattona =  true;\
+      nonsaltare = true;\
+    \}\
+\
+    function pinocchioNonsalta () \{\
+      nonsaltare = true;\
+    \}\
+\
+    if (nonsaltare) \{\
+\
+      if (jumpButton.isDown && (player.body.onFloor() || player.body.touching.down)) \{\
+        player.body.velocity.y = 0;\
+      \}\
+      \}\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\
+\
+NEL BOOTSTATE\
+game.load.image('overlapNonsaltare', 'asset/livello 2/overlapNonsaltare.png');\
+}
